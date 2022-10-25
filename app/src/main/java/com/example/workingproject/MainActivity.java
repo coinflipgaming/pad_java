@@ -15,13 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try{
-            String[] categories ={"jabłko","pomarańcza","gruszka","mango","porzeczka"};
+            String[] categories ={"jabłko","pomarańcza","gruszka","mango","porzeczka","ananas"};
             LinearLayout a = findViewById(R.id.main_container);
-            for(int x = 0; x < 5; x++){
+            for (String category : categories) {
                 CheckBox checkBox1 = new CheckBox(getApplicationContext());
                 CheckBox checkBox2 = new CheckBox(getApplicationContext());
                 TextView textview1 = new TextView(getApplicationContext());
-                textview1.setText(categories[x]);
+                textview1.setText(category);
 
                 checkBox1.setOnClickListener(view -> checkBox2.setChecked(false));
                 checkBox2.setOnClickListener(view -> checkBox1.setChecked(false));
@@ -41,8 +41,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
 }
