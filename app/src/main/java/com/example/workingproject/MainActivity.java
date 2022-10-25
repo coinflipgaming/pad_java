@@ -3,6 +3,7 @@ package com.example.workingproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
                 CheckBox checkBox2 = new CheckBox(getApplicationContext());
                 TextView textview1 = new TextView(getApplicationContext());
                 textview1.setText(categories[x]);
+
+                checkBox1.setOnClickListener(view -> checkBox2.setChecked(false));
+                checkBox2.setOnClickListener(view -> checkBox1.setChecked(false));
 
                 LinearLayout b = new LinearLayout(getApplicationContext());
                 b.setOrientation(LinearLayout.HORIZONTAL);
