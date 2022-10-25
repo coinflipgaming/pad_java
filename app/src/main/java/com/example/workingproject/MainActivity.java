@@ -2,6 +2,7 @@ package com.example.workingproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -28,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
                 LinearLayout b = new LinearLayout(getApplicationContext());
                 b.setOrientation(LinearLayout.HORIZONTAL);
+
+                Point _windowsize = new Point();
+                getWindowManager().getDefaultDisplay().getRealSize(_windowsize);
+                b.setLayoutParams(new LinearLayout.LayoutParams((_windowsize.x/3)+30,_windowsize.y/20));
 
                 b.addView(checkBox1);
                 b.addView(checkBox2);
